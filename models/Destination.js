@@ -4,7 +4,8 @@ const destinationSchema = new mongoose.Schema({
   account_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'accounts',
-    required: true
+    required: true,
+    index: true
   },
   url: {
     type: String,

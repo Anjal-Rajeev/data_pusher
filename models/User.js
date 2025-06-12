@@ -8,8 +8,8 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   role: { type: Schema.Types.ObjectId, ref: "roles", default: ROLES.ADMIN },
 
-  created_by: { type: String },
-  updated_by: { type: String },
+  created_by: { type: Schema.Types.ObjectId, ref: "users" },
+  updated_by: { type: Schema.Types.ObjectId, ref: "users" },
 
 }, { timestamps: true });
 
