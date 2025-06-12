@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const destinationSchema = new mongoose.Schema({
   account_id: {
@@ -24,8 +24,8 @@ const destinationSchema = new mongoose.Schema({
     type: Number,
     default: 0 // 0 - Active, 1 - Deleted
   },
-  created_by: { type: String },
-  updated_by: { type: String },
+  created_by: { type: Schema.Types.ObjectId, ref: "users" },
+  updated_by: { type: Schema.Types.ObjectId, ref: "users" },
 
 }, { timestamps: true });
 

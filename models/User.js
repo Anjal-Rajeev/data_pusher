@@ -4,7 +4,7 @@ import { ROLES } from '../config.js';
 
 const userSchema = new mongoose.Schema({
   name: String,
-  email: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true, index: true },
   password: { type: String, required: true },
   role: { type: Schema.Types.ObjectId, ref: "roles", default: ROLES.ADMIN },
 
